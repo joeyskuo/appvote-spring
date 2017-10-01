@@ -1,6 +1,7 @@
 package com.kuos.service;
 
 import com.kuos.entities.Vote;
+import com.kuos.entities.VoteList;
 import com.kuos.repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,10 @@ public class VoteServiceImpl implements VoteService{
     private VoteRepository voteRepository;
 
     @Override
-    public Iterable<Vote> getVotes() {
-        return voteRepository.findAll();
+    public VoteList getVotes() {
+        VoteList voteList = new VoteList();
+        voteList.setVotes(voteRepository.findAll());
+        return voteList;
     }
 
     @Override

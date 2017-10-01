@@ -1,6 +1,7 @@
 package com.kuos.service;
 
 import com.kuos.entities.Vote;
+import com.kuos.entities.VoteList;
 
 /**
  * Created by Shi on 9/30/2017.
@@ -8,7 +9,7 @@ import com.kuos.entities.Vote;
 
 public interface VoteService {
 
-    public Iterable<Vote> getVotes();
+    public VoteList getVotes();
 
     public Vote createVote(String appName);
 }
