@@ -17,6 +17,10 @@ public class Vote {
     private Date date;
 
 
+    public Vote (){
+
+    }
+
     public Vote(String appName) {
         this.appName = appName;
         this.date = new Date();

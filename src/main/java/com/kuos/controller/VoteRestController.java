@@ -1,8 +1,9 @@
 package com.kuos.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.kuos.entities.Vote;
+import com.kuos.service.VoteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Shi on 9/30/2017.
@@ -10,15 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class VoteRestController {
 
-    @RequestMapping(path = "/vote", method = RequestMethod.POST)
-    public String vote() {
-        return "vote post response";
+    @Autowired
+    private VoteService voteService;
+
+    @PostMapping(path = "/vote", consumes = "application/json")
+    public Vote sendVote(@RequestBody Vote vote) {
+        return voteService.createVote(vote.getAppName());
+        //return appName.appName;
     }
 
 
-    @RequestMapping(path = "/votes", method = RequestMethod.GET)
-    public String votes() {
-        return "vote list response";
+    @GetMapping(path = "/votes")
+    public Iterable<Vote> votes() {
+        return voteService.getVotes();
     }
-
 }
