@@ -1,8 +1,6 @@
 package com.kuos.entities;
 
-/**
- * Created by Shi on 10/1/2017.
- */
+
 public class VoteList {
 
     private Iterable<Vote> votes;

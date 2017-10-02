@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by Shi on 9/30/2017.
- */
+
 @Service
 public class VoteServiceImpl implements VoteService{
 

@@ -5,9 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-/**
- * Created by Shi on 9/30/2017.
- */
+
 @Document
 public class Vote {
 
